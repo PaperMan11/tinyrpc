@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package message;
+option go_package="./message;message"; // 生成路径+包名
+
+// ArithService Defining Computational Digital Services
+service ArithService {
+  // Add addition
+  rpc Add(ArithRequest) returns (ArithResponse);
+  // Sub subtraction
+  rpc Sub(ArithRequest) returns (ArithResponse);
+  // Mul multiplication
+  rpc Mul(ArithRequest) returns (ArithResponse);
+  // Div division
+  rpc Div(ArithRequest) returns (ArithResponse);
+}
+
+message ArithRequest {
+  double a = 1;
+  double b = 2;
+}
+
+message ArithResponse {
+  double c = 1;
+}
